@@ -35,6 +35,7 @@ DEPDIR = .deps
 df = $(DEPDIR)/$(*F)
 
 .PHONY: all clean install envcheck
+.SUFFIXES:
 
 all: $(HEXFILE)
 
@@ -76,7 +77,7 @@ $(DEPDIR):
 	@cp $*.S.d $(df).S.P; sed -e 's/#.*//' -e 's/^[^:]*: *//' -e 's/ *\\$$//' -e '/^$$/ d' -e 's/$$/ :/' < $*.S.d >> $(df).S.P; $(RM) $*.S.d
 
 # Link symbol lists to object files
-%.syms.o: %.syms envcheck
+%.syms.o: %.syms
 	$(LD) -o $@ -r --just-symbols=$<
 
 # Check dependencies
