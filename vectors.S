@@ -31,6 +31,7 @@ _isr_primary_install:
 
 # Interrupts are handled here
 .align 4
+.set noreorder
 .global _isr_stub
 _isr_stub:
 	eret
@@ -46,5 +47,6 @@ _gen_exception:
 	addi $k0, $k0, 4
 	mtc0 $k0, $14, 0
 	eret
+	nop
 
 .end _gen_exception
