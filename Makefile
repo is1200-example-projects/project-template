@@ -23,7 +23,7 @@ HEXFILE		= $(PROGNAME).hex
 # Find all source files automatically
 CFILES          = $(wildcard *.c)
 ASFILES         = $(wildcard *.S)
-SYMSFILES	= $(wildchar *.syms)
+SYMSFILES	= $(wildcard *.syms)
 
 # Object file names
 OBJFILES        = $(CFILES:.c=.c.o)
