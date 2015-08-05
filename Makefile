@@ -44,7 +44,7 @@ clean:
 	$(RM) -R $(DEPDIR)
 
 envcheck:
-	@echo "$(TARGET)" | grep pic32 > /dev/null || (\
+	@echo "$(TARGET)" | grep mcb32 > /dev/null || (\
 		echo ""; \
 		echo " **************************************************************"; \
 		echo " * Make sure you have sourced the cross compiling environment *"; \
