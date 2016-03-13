@@ -81,5 +81,5 @@ $(DEPDIR):
 	$(LD) -o $@ -r --just-symbols=$<
 
 # Check dependencies
--include $(SRCFILES:%.c=$(DEPDIR)/%.c.P)
--include $(ASMFILES:%.S=$(DEPDIR)/%.S.P)
+-include $(CFILES:%.c=$(DEPDIR)/%.c.P)
+-include $(ASFILES:%.S=$(DEPDIR)/%.S.P)
